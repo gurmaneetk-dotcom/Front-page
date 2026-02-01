@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HealthyBox — Fresh Tiffin Services</title>
+    <meta name="description" content="HealthyBox: nutritious, home-style tiffins delivered daily. Custom plans, seasonal menu, balanced meals." />
+    <style>
+        :root{
+            --bg:#f6fbf6; --card:#ffffff; --accent:#2f8f4a; --muted:#6b7280; --glass: rgba(255,255,255,0.6);
+            --maxw:1100px;
+            --radius:12px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; background:linear-gradient(180deg,#f8fff8 0%,var(--bg) 40%); color:#0f1724;
+            -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+            line-height:1.45;
+        }
+        .container{max-width:var(--maxw); margin:0 auto; padding:28px;}
+        header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+        .brand{display:flex;gap:12px;align-items:center}
+        .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#5db37a);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+        nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+        .hero{
+            display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin:14px 0 36px;
+        }
+        .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.8),var(--glass));border-radius:var(--radius);padding:34px;box-shadow:0 6px 24px rgba(18,38,20,0.06)}
+        h1{margin:0;font-size:28px;color:#062b13}
+        p.lead{color:var(--muted);margin:12px 0 18px}
+        .cta{display:flex;gap:12px;margin-top:8px}
+        .btn{padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+        .btn-primary{background:var(--accent);color:#fff}
+        .btn-ghost{background:transparent;color:var(--accent);border:1px solid rgba(47,143,74,0.12)}
+        .stats{display:flex;gap:12px;margin-top:18px}
+        .stat{background:#fff;padding:10px;border-radius:10px;min-width:86px;text-align:center;box-shadow:0 4px 14px rgba(12,30,17,0.04)}
+        .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0}
+        .service{background:var(--card);padding:16px;border-radius:12px}
+        .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0}
+        .menu .item{background:linear-gradient(180deg,#fff,#fbfff9);padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(12,30,17,0.03)}
+        .price-cards{display:flex;gap:12px;margin:24px 0}
+        .plan{flex:1;padding:18px;border-radius:12px;background:#fff;border:1px solid rgba(6,43,19,0.04)}
+        .plan h3{margin:0 0 8px}
+        footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(6,43,19,0.04);margin-top:28px}
+        form{display:flex;flex-direction:column;gap:10px}
+        input,textarea,select{padding:10px;border-radius:8px;border:1px solid #e6efe6;background:transparent}
+        .testimonials{display:flex;gap:12px;overflow:hidden}
+        .testi{background:#fff;padding:14px;border-radius:12px;min-width:220px}
+        @media (max-width:980px){
+            .hero{grid-template-columns:1fr; text-align:center}
+            .card-grid,.menu{grid-template-columns:repeat(2,1fr)}
+            .price-cards{flex-direction:column}
+        }
+        @media (max-width:560px){
+            .card-grid,.menu{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">HB</div>
+                <div>
+                    <div style="font-weight:800">HealthyBox</div>
+                    <div style="font-size:12px;color:var(--muted)">Nutritious tiffins, delivered</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#menu">Menu</a>
+                <a href="#plans">Plans</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-card">
+                <h1>Home-style, balanced meals — delivered hot</h1>
+                <p class="lead">Daily tiffin plans crafted by nutritionists. Fresh ingredients, portion-controlled, and tailored to your dietary needs.</p>
+                <div class="cta">
+                    <button class="btn btn-primary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">Choose Plan</button>
+                    <button class="btn btn-ghost" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">See Menu</button>
+                </div>
+
+                <div class="stats" aria-hidden="true">
+                    <div class="stat"><div style="font-weight:700">1200+</div><div style="font-size:12px;color:var(--muted)">Meals/week</div></div>
+                    <div class="stat"><div style="font-weight:700">4.8★</div><div style="font-size:12px;color:var(--muted)">Avg. rating</div></div>
+                    <div class="stat"><div style="font-weight:700">100%</div><div style="font-size:12px;color:var(--muted)">Freshly cooked</div></div>
+                </div>
+            </div>
+
+            <aside>
+                <div style="background:linear-gradient(180deg,#ffffff,rgba(255,255,255,0.9));padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(15,40,20,0.06)">
+                    <div style="font-weight:700">Quick Info</div>
+                    <ul style="margin:10px 0 0;padding-left:16px;color:var(--muted)">
+                        <li>Delivery: Mon–Sat (7–10 AM)</li>
+                        <li>Customizable plans</li>
+                        <li>Eco-friendly packaging</li>
+                    </ul>
+                    <div style="margin-top:12px">
+                        <button class="btn btn-primary" style="width:100%" onclick="openOrder()">Order Now</button>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section id="menu">
+            <h2 style="margin:6px 0 10px">Weekly Menu Highlights</h2>
+            <div class="menu" aria-label="Sample menu">
+                <div class="item">
+                    <div style="font-weight:700">Paneer & Quinoa Bowl</div>
+                    <div style="font-size:13px;color:var(--muted);margin:6px 0">Protein-rich paneer, tri-color quinoa, seasonal veggies</div>
+                    <div style="font-weight:800;color:var(--accent)">Approx 520 kcal</div>
+                </div>
+                <div class="item">
+                    <div style="font-weight:700">Millet Khichdi</div>
+                    <div style="font-size:13px;color:var(--muted);margin:6px 0">Finger millet & moong dal, tempering, ghee</div>
+                    <div style="font-weight:800;color:var(--accent)">Approx 450 kcal</div>
+                </div>
+                <div class="item">
+                    <div style="font-weight:700">Grilled Fish & Greens</div>
+                    <div style="font-size:13px;color:var(--muted);margin:6px 0">Lemon-herb fish, roasted veggies, brown rice</div>
+                    <div style="font-weight:800;color:var(--accent)">Approx 560 kcal</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans">
+            <h2 style="margin:6px 0 10px">Plans</h2>
+            <div class="price-cards" role="list">
+                <div class="plan" role="listitem">
+                    <h3>Daily Saver</h3>
+                    <div style="font-weight:700;color:var(--accent)">₹129 / meal</div>
+                    <p style="color:var(--muted);margin:8px 0">Weekdays (Mon–Fri), standard menu</p>
+                    <ul style="color:var(--muted);margin:8px 0;padding-left:16px">
+                        <li>Balanced portion</li>
+                        <li>One-time customization</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openOrder('Daily Saver')">Select</button>
+                </div>
+
+                <div class="plan" role="listitem" style="border:2px solid rgba(47,143,74,0.12)">
+                    <h3>HealthyFlex</h3>
+                    <div style="font-weight:700;color:var(--accent)">₹149 / meal</div>
+                    <p style="color:var(--muted);margin:8px 0">Mon–Sat, choose veg/non-veg & add snacks</p>
+                    <ul style="color:var(--muted);margin:8px 0;padding-left:16px">
+                        <li>Customize daily</li>
+                        <li>Dietitian support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openOrder('HealthyFlex')">Select</button>
+                </div>
+
+                <div class="plan" role="listitem">
+                    <h3>Family Pack</h3>
+                    <div style="font-weight:700;color:var(--accent)">Contact for pricing</div>
+                    <p style="color:var(--muted);margin:8px 0">Multi-portion meals for households</p>
+                    <ul style="color:var(--muted);margin:8px 0;padding-left:16px">
+                        <li>Bulk discounts</li>
+                        <li>Special menus on request</li>
+                    </ul>
+                    <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 style="margin:6px 0 10px">Why HealthyBox?</h2>
+            <div class="card-grid">
+                <div class="service">
+                    <div style="font-weight:700">Nutrition-first</div>
+                    <div style="color:var(--muted);margin-top:6px">Menus are planned by registered dietitians to meet daily macro & micronutrient needs.</div>
+                </div>
+                <div class="service">
+                    <div style="font-weight:700">Fresh & Local</div>
+                    <div style="color:var(--muted);margin-top:6px">We source seasonal produce from local farms and cook daily to preserve nutrients.</div>
+                </div>
+                <div class="service">
+                    <div style="font-weight:700">Sustainable</div>
+                    <div style="color:var(--muted);margin-top:6px">Compostable packaging and minimal food waste programs.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2 style="margin:6px 0 10px">What customers say</h2>
+            <div class="testimonials" aria-live="polite">
+                <div class="testi">"Tasty and wholesome. My energy levels improved!" — Asha</div>
+                <div class="testi">"Convenient & customizable. Great for office days." — Rohit</div>
+                <div class="testi">"Kids love the meals; nutritionist helped with allergies." — Meera</div>
+            </div>
+        </section>
+
+        <section id="contact" style="margin-top:22px">
+            <h2 style="margin:6px 0 10px">Contact & Order</h2>
+            <div style="display:grid;grid-template-columns:1fr 360px;gap:16px">
+                <form id="orderForm" onsubmit="submitForm(event)" autocomplete="on" aria-label="Order form">
+                    <input name="name" id="name" placeholder="Full name" required />
+                    <input type="tel" name="phone" id="phone" placeholder="Phone (e.g. +91 9XXXXXXXXX)" required />
+                    <input name="address" id="address" placeholder="Delivery address" required />
+                    <select name="plan" id="plan">
+                        <option value="HealthyFlex">HealthyFlex</option>
+                        <option value="Daily Saver">Daily Saver</option>
+                        <option value="Family Pack">Family Pack</option>
+                    </select>
+                    <textarea name="note" id="note" rows="3" placeholder="Dietary notes or allergies (optional)"></textarea>
+                    <div style="display:flex;gap:8px">
+                        <button class="btn btn-primary" type="submit">Send Order</button>
+                        <button class="btn btn-ghost" type="reset">Reset</button>
+                    </div>
+                    <div id="formMsg" style="color:var(--accent);margin-top:8px;font-weight:700;display:none"></div>
+                </form>
+
+                <aside style="background:#fff;padding:16px;border-radius:12px">
+                    <div style="font-weight:700">Reach us</div>
+                    <div style="color:var(--muted);margin-top:8px">Email: hello@healthybox.example<br>Phone: +91 98765 43210</div>
+                    <div style="margin-top:12px">
+                        <div style="font-weight:700">Pickup hubs</div>
+                        <ul style="color:var(--muted);padding-left:16px">
+                            <li>Sector 17, Chandigarh</li>
+                            <li>Model Town, Ludhiana</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <footer>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+                <div style="font-weight:700">HealthyBox</div>
+                <div style="color:var(--muted)">© <span id="yr"></span> HealthyBox. All rights reserved.</div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('yr').textContent = new Date().getFullYear();
+        function openOrder(plan){ document.getElementById('plan').value = plan || 'HealthyFlex'; document.getElementById('contact').scrollIntoView({behavior:'smooth'}); }
+        function submitForm(e){
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const plan = document.getElementById('plan').value;
+            // Simulate submit
+            const msg = document.getElementById('formMsg');
+            msg.textContent = `Thanks ${name || ''}! We'll contact you about the ${plan} plan.`;
+            msg.style.display = 'block';
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
